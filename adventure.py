@@ -23,6 +23,7 @@ if __name__ == "__main__":
         #for action in location.available_actions():
             #print(action)
         choice = input("\nEnter action: ")
+        #we're going on a trip
 
         if (choice == "[menu]"):
             print("Menu Options: \n")

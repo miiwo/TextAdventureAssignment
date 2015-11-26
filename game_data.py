@@ -135,11 +135,12 @@ class World:
         '''
         Store all locations from filename (locations.txt) into the variable "self.locations"
         however you think is best.
-        Remember to keep track of the integer number representing each location.
-        Make sure the Location class is used to represent each location.
-        Change this docstring as needed.
-        :param filename:
-        :return:
+        Location number is based on order they come in location.txt
+        How it reads it:
+        brief description
+        long description - lines until it reaches END, then starts a new location
+        :param filename: name of file containing location data
+        :return: list of locations for world class
         '''
 
         temp_location = []

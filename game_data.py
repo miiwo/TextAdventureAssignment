@@ -21,6 +21,7 @@ class Location:
         self.brief = brief
         self.long = long
         self.visit = False
+        self.actions = {}
 
     def get_brief_description (self):
         '''Return str brief description of location.'''
@@ -30,13 +31,14 @@ class Location:
         '''Return str long description of location.'''
         return self.long
 
-    def available_actions(self):
+    def available_actions(self, name, action_val=0):
         '''
         -- Suggested Method (You may remove/modify/rename this as you like) --
         Return list of the available actions in this location.
         The list of actions should depend on the items available in the location
         and the x,y position of this location on the world map.'''
-        pass
+        self.actions[name] = action_val
+
     def is_visited(self):
         return self.visit
 
@@ -125,8 +127,7 @@ class World:
         read_file = open(filename, "r")
 
         for line in read_file:
-            if line.isdigit():
-                temp_map.append([int(i) for i in line])
+            temp_map.append([int(i) for i in line.strip().split() if i.isdigit()])
 
         read_file.close()
         return temp_map
@@ -154,7 +155,7 @@ class World:
             hold_long = next(read_file)
             while hold_long != "END\n":
                 long += hold_long
-                hold_long = next(read_file) # may need to add \n if want newline in console
+                hold_long = next(read_file)
 
             temp_location.append(Location(brief, long))
 
@@ -172,7 +173,7 @@ class World:
 
         pass
 
-    def get_location(self, x, y):
+    def get_location(self, x, y, surround=False):
         '''Check if location exists at location (x,y) in world map.
         Return Location object associated with this location if it does. Else, return None.
         Remember, locations represented by the number -1 on the map should return None.
@@ -181,7 +182,17 @@ class World:
         :return: Return Location object associated with this location if it does. Else, return None.
         '''
 
-        if len(self.map)> x and len(self.map[x]) > y and self.map[x][y] != -1:
+        if len(self.map) > x >= 0 and len(self.map[x]) > y >= 0 and self.map[x][y] != -1:
+            if surround:
+                if self.get_location(x, y + 1):
+                    self.locations[self.map[x][y]].available_actions("go east", [0, 1])
+                if self.get_location(x, y - 1):
+                    self.locations[self.map[x][y]].available_actions("go west", [0, -1])
+                if self.get_location(x + 1, y):
+                    self.locations[self.map[x][y]].available_actions("go south", [1, 0])
+                if self.get_location(x - 1, y):
+                    self.locations[self.map[x][y]].available_actions("go north", [-1, 0])
+
             return self.locations[self.map[x][y]]
         else:
             return None

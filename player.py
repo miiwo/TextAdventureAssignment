@@ -1,3 +1,4 @@
+from game_data import Item
 class Player:
 
     def __init__(self, x, y):
@@ -14,7 +15,7 @@ class Player:
         '''
         self.x = x
         self.y = y
-        self.inventory = []
+        self.inventory = [Item("TCard", 2, 5, 10),Item("CCard", 2, 5, 10),Item("BCard", 2, 5, 10)]
         self.victory = False
 
     def move(self, dx, dy):
@@ -24,7 +25,8 @@ class Player:
         :param dy:
         :return:
         '''
-        pass
+        self.x += dx
+        self.y += dy
 
     def move_north(self):
         '''These integer directions are based on how the map must be stored
@@ -59,3 +61,8 @@ class Player:
         Return inventory.
         :return:
         '''
+    def get_item(self, name):
+        for item in self.inventory:
+            if item.get_name() == name:
+                return item
+        return None

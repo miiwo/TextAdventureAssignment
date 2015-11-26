@@ -1,6 +1,6 @@
 class Location:
 
-    def __init__(self):
+    def __init__(self, brief, long):
         '''Creates a new location.
 
         Data that could be associated with each Location object:
@@ -18,15 +18,17 @@ class Location:
         The only thing you must NOT change is the name of this class: Location.
         All locations in your game MUST be represented as an instance of this class.
         '''
-        pass
+        self.brief = brief
+        self.long = long
+        self.visit = False
 
     def get_brief_description (self):
         '''Return str brief description of location.'''
-        pass
+        return self.brief
 
     def get_full_description (self):
         '''Return str long description of location.'''
-        pass
+        return self.long
 
     def available_actions(self):
         '''
@@ -35,6 +37,11 @@ class Location:
         The list of actions should depend on the items available in the location
         and the x,y position of this location on the world map.'''
         pass
+    def is_visited(self):
+        return self.visit
+
+    def visited(self):
+        self.visit = True
 
 class Item:
 
@@ -67,7 +74,7 @@ class Item:
     def get_name(self):
         '''Return the str name of the item.'''
 
-        pass
+        return self.name
 
     def get_target_location (self):
         '''Return item's int target location where it should be deposited.'''
@@ -100,8 +107,8 @@ class World:
         '''
         self.map = self.load_map(mapdata) # The map MUST be stored in a nested list as described in the docstring for load_map() below
         # self.locations ... You may choose how to store location and item data.
-        self.load_locations(locdata) # This data must be stored somewhere. Up to you how you choose to do it...
-        self.load_items(itemdata) # This data must be stored somewhere. Up to you how you choose to do it...
+        self.locations = self.load_locations(locdata) # This data must be stored somewhere. Up to you how you choose to do it...
+        #self.load_items(itemdata) # This data must be stored somewhere. Up to you how you choose to do it...
 
     def load_map(self, filename):
         '''
@@ -114,7 +121,15 @@ class World:
         :param filename: string that gives name of text file in which map data is located
         :return: return nested list of integers representing map of game world as specified above
         '''
-        pass
+        temp_map = []
+        read_file = open(filename, "r")
+
+        for line in read_file:
+            if line.isdigit():
+                temp_map.append([int(i) for i in line])
+
+        read_file.close()
+        return temp_map
 
     def load_locations(self, filename):
         '''
@@ -127,7 +142,23 @@ class World:
         :return:
         '''
 
-        pass
+        temp_location = []
+        read_file = open(filename, "r")
+        for line in read_file:
+
+            brief = line.strip()
+            long = next(read_file)
+
+            # for multiple lines in long description
+            hold_long = next(read_file)
+            while hold_long != "END\n":
+                long += hold_long
+                hold_long = next(read_file) # may need to add \n if want newline in console
+
+            temp_location.append(Location(brief, long))
+
+        read_file.close()
+        return temp_location
 
     def load_items(self, filename):
         '''
@@ -149,4 +180,7 @@ class World:
         :return: Return Location object associated with this location if it does. Else, return None.
         '''
 
-        pass
+        if len(self.map)> x and len(self.map[x]) > y and self.map[x][y] != -1:
+            return self.locations[self.map[x][y]]
+        else:
+            return None

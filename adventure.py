@@ -12,12 +12,16 @@ if __name__ == "__main__":
 
         # ENTER CODE HERE TO PRINT LOCATION DESCRIPTION
         # depending on whether or not it's been visited before,
-        #   print either full description (first time visit) or brief description (every subsequent visit)
+        # print either full description (first time visit) or brief description (every subsequent visit)
+        if location.is_visited():
+            print(location.get_brief_description())
+        else:
+            print(location.get_full_description())
 
         print("What to do? \n")
         print("[menu]")
-        for action in location.available_actions():
-            print(action)
+        #for action in location.available_actions():
+            #print(action)
         choice = input("\nEnter action: ")
 
         if (choice == "[menu]"):

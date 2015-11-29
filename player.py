@@ -1,11 +1,12 @@
 from game_data import Item
 class Player:
 
-    def __init__(self, x, y):
+    def __init__(self, x, y, move):
         '''
         Creates a new Player.
         :param x: x-coordinate of position on map
         :param y: y-coordinate of position on map
+        :param move: maximum amount of moves in the game
         :return:
 
         This is a suggested starter class for Player.
@@ -15,32 +16,24 @@ class Player:
         '''
         self.x = x
         self.y = y
+        self.score = 0
         self.inventory = [Item("TCard", 2, 5, 10),Item("CCard", 2, 5, 10),Item("BCard", 2, 5, 10)]
         self.victory = False
+        self.max_moves = move
+        self.moves = 0
 
     def move(self, dx, dy):
         '''
         Given integers dx and dy, move player to new location (self.x + dx, self.y + dy)
-        :param dx:
-        :param dy:
-        :return:
+        :param dx: amount to move left/right
+        :param dy: amount to move up/down
         '''
         self.x += dx
         self.y += dy
-
-    def move_north(self):
-        '''These integer directions are based on how the map must be stored
-        in our nested list World.map'''
-        self.move(0,-1)
-
-    def move_south(self):
-        self.move(0,1)
-
-    def move_east(self):
-        self.move(1,0)
-
-    def move_west(self):
-        self.move(-1,0)
+        self.moves += 1
+        if self.moves == self.max_moves:
+            print("You could not get in on time. You lose.")
+            quit()
 
     def add_item(self, item):
         '''
@@ -66,3 +59,6 @@ class Player:
             if item.get_name() == name:
                 return item
         return None
+
+    def set_victory(self):
+        self.victory = True

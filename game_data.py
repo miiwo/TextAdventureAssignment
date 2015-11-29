@@ -22,6 +22,7 @@ class Location:
         self.long = long
         self.visit = False
         self.actions = {}
+        self.items = []
 
     def get_brief_description (self):
         '''Return str brief description of location.'''
@@ -40,6 +41,10 @@ class Location:
         self.actions[name] = action_val
 
     def is_visited(self):
+        """
+        Checks if a location has been visited or not
+        :return:
+        """
         return self.visit
 
     def visited(self):

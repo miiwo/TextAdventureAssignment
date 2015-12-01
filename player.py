@@ -17,7 +17,7 @@ class Player:
         self.x = x
         self.y = y
         self.score = 0
-        self.inventory = [Item("TCard", 2, 5, 10),Item("CCard", 2, 5, 10),Item("BCard", 2, 5, 10)]
+        self.inventory = []
         self.victory = False
         self.max_moves = move
         self.moves = 0
@@ -31,7 +31,7 @@ class Player:
         self.x += dx
         self.y += dy
         self.moves += 1
-        if self.moves == self.max_moves:
+        if self.moves == self.max_moves + 1:
             print("You could not get in on time. You lose.")
             quit()
 
@@ -41,6 +41,8 @@ class Player:
         :param item:
         :return:
         '''
+        self.inventory.append(Item)
+
 
     def remove_item(self, item):
         '''
@@ -48,6 +50,7 @@ class Player:
         :param item:
         :return:
         '''
+        self.inventory.remove(item)
 
     def get_inventory(self):
         '''

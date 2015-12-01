@@ -1,1 +1,3 @@
-# FILL THIS IN WITH ITEM DATA
+itemA_____1_____2_____50_____bruh
+itemB_____3_____1_____20_____hello
+itemC_____1_____3_____100_____yo

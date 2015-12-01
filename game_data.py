@@ -52,7 +52,7 @@ class Location:
 
 class Item:
 
-    def __init__ (self, name, start, target, target_points):
+    def __init__ (self, name, start, target, target_points, description):
         '''Create item referred to by string name, with integer "start"
         being the integer identifying the item's starting location,
         the integer "target" being the item's target location, and
@@ -72,11 +72,12 @@ class Item:
         self.start = start
         self.target = target
         self.target_points = target_points
+        self.description = description
 
     def get_starting_location (self):
         '''Return int location where item is first found.'''
 
-        pass
+        return self.start
 
     def get_name(self):
         '''Return the str name of the item.'''
@@ -86,12 +87,12 @@ class Item:
     def get_target_location (self):
         '''Return item's int target location where it should be deposited.'''
 
-        pass
+        return self.target
 
     def get_target_points (self):
         '''Return int points awarded for depositing the item in its target location.'''
 
-        pass
+        return self.target_points
 
 class World:
 
@@ -116,6 +117,7 @@ class World:
         # self.locations ... You may choose how to store location and item data.
         self.locations = self.load_locations(locdata) # This data must be stored somewhere. Up to you how you choose to do it...
         #self.load_items(itemdata) # This data must be stored somewhere. Up to you how you choose to do it...
+        self.items = self.load_items(itemdata)
 
     def load_map(self, filename):
         '''
@@ -176,7 +178,13 @@ class World:
         :return:
         '''
 
-        pass
+        temp_item = []
+        read_item_file = open(filename, "r")
+        for line in read_item_file:
+            itemlist = line.split("_____")
+            temp_item.append(itemlist)
+        read_item_file.close()
+        return temp_item
 
     def get_location(self, x, y, surround=False):
         '''Check if location exists at location (x,y) in world map.
@@ -197,6 +205,9 @@ class World:
                     self.locations[self.map[x][y]].available_actions("go south", [1, 0])
                 if self.get_location(x - 1, y):
                     self.locations[self.map[x][y]].available_actions("go north", [-1, 0])
+                for i in self.items:
+                    if int(i[1]) == self.locations.index(self.get_location(x,y)):
+                        self.locations[self.map[x][y]].available_actions(" pick up [item]", i)
 
             return self.locations[self.map[x][y]]
         else:

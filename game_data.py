@@ -58,7 +58,7 @@ class Location:
 
 class Item:
 
-    def __init__ (self, name, start, target, target_points, description):
+    def __init__ (self, name, start, target, target_points, description, use_descript):
         '''
         Create item referred to by string name, with integer "start"
         being the integer identifying the item's starting location,
@@ -78,7 +78,8 @@ class Item:
         self.start = start
         self.target = target
         self.target_points = target_points
-        self.description = description.replace("\n", "")
+        self.description = description
+        self.use_descript = use_descript.replace("\n", "")
 
     def get_starting_location (self):
         '''Return int location where item is first found.'''
@@ -128,7 +129,7 @@ class World:
         read_file = open(filename, "r")
 
         for line in read_file:
-            temp_map.append([int(i) for i in line.strip().split() if i.isdigit()])
+            temp_map.append([int(i) for i in line.strip().split()])
 
         read_file.close()
         return temp_map
@@ -177,6 +178,16 @@ class World:
         read_item_file.close()
         return temp_item
 
+    def load_special_items(self, filename):
+
+        spec_item = []
+        read_special_file = open(filename, "r")
+        for line in read_special_file:
+            speciallist = line.split("_____")
+            spec_item.append(speciallist)
+        read_special_file.close()
+        return spec_item
+
     def get_location(self, x, y, surround=False, player=None):
         '''Check if location exists at location (x,y) in world map.
         Return Location object associated with this location if it does. Else, return None.
@@ -203,7 +214,7 @@ class World:
                     self.locations[self.map[x][y]].available_actions("go north", [-1, 0])
 
                 for i in self.items:
-                    if int(i[1]) == self.locations.index(self.get_location(x,y)) and Item(i[0], i[1], i[2], i[3], i[4]) not in player.inventory:
+                    if int(i[1]) == self.locations.index(self.get_location(x,y)) and Item(i[0], i[1], i[2], i[3], i[4], i[5]) not in player.inventory:
                         self.locations[self.map[x][y]].available_actions("pick up [item]", i)
                     else:
                         if "pick up [item]" in self.locations[self.map[x][y]].actions:

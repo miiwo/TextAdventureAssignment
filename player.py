@@ -12,7 +12,7 @@ class Player:
         self.x = x
         self.y = y
         self.score = 0
-        self.inventory = []
+        self.inventory = [Item("Bus Pass", 0, 14, 0, "Your bus pass.", "You have given up on life")]
         self.victory = False
         self.max_moves = move
         self.moves = 0

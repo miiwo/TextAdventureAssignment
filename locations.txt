@@ -1,15 +1,79 @@
 That way is blocked.
 That way is blocked.
 END
-You are on the first floor of the UTM Library. There is an empty study room to the South, an exit from the library to the North.
-You are on the first floor of the UTM Library. It's usually crowded at this time of the day, but today it's eerily quiet.
-Only a few students are studying inside one of the study rooms. You better not disturb them. A librarian stands near the
-service desk, looking bored and sleepy. There is an empty study room to the South, an exit from the library to the North.
+You are in the forest north of UTM. You feel as if you should leave as soon as possible.
+You are in the forest north of UTM. You have never been here before, and there is zero chance that anything you would
+be looking for would be here. You should probably turn around and leave as soon as possible. You wouldn't want anything
+bad to happen to you just hours before your exam, would you?
 END
-This study room is completely empty.
-You are in an empty study room. And by empty, we mean, absolutely empty. All the tables and chairs have been taken out,
-the whiteboards taken off the wall, not even the carpeting is left. Are they planning to do something else with this space?
+You are in IB.
+You are in IB. Here is where most large classes take place, and here is where your exam will be. Just looking at the
+front doors to the large lecture halls make you anxious. You really can't afford to fail this test, as you have been
+slacking off all year. You should start looking for your things before the test starts.
 END
-You are outside of the library. There is a Starbucks to the North.
-You are outside of the library in a crowded hallway. There is a smell of coffee in the air. There is a Starbucks to the North.
+You are in the Library. Remember to be quiet.
+You are in the Library. As you walk in you see a sign remembinding people to turn in there overdue books. The librarian
+looks at you sternly, as if to say; "You better not open your mouth, so help me god.". You consider studying here, but
+all of the study rooms here are full, as always.
+END
+You are in the parking lot outside the RAWC.
+You are standing in the UTM parking lot. You wonder what you are doing here, as you don't own a car. You should probably
+go find your things before your exam starts.
+END
+You are in Deerfield Hall.
+You are in Deerfield Hall. You usually are only here for around 5 minutes to hand in your labs. You see the large glass
+cases that hold way too lifelike mannequins that you always felt were a little creepy. On the second floor is are the
+study rooms that you never enter, as you prefer to study in your room. Also on the second floor is the computer labs,
+which house some of the only computers with an ethernet connection on campus. You briefly lament over the schools shitty
+internet connection before you decide to move on.
+END
+You are on the soccer field.
+You are now on the UTM soccer field. The only experience you have with this location is walking by when going to and
+from class. The entire concept of sports is somewhat foreign to you. Come on, you didn't think that someone who is in
+Computer Science could ever be good at sports, did you? You briefly remember when jocks would slam you against the
+locker in high school, but before you start to break down and cry, you decide to move on.
+END
+You are in the CCT Building.
+You are in the CCT Building. You briefly shed a tear over the proofs class you struggled through last semester (I mean,
+1 + 1 = 0? How does that even make any sense?). Downstairs there is the Tim Horton's express, which has kept you awake
+through many a boring classes. Upstairs is a computer lab with ethernet connection, where some of your friends go to
+play League of Legends with a somewhat stable connection. You think about how UTM should really get better internet, but
+stop before you start ranting to the first person you see.
+END
+You are in the RAWC.
+You are in the RAWC. You have been here only once before when you decided to start you're workout plan to get into
+better shape. That didn't really work out, did it. You are surrounded with people with a better work ethic than you, who
+can actually go to the pool without feeling like a loser. You decide to work past your shame to try and find what you
+need for the exam.
+END
+You are in Oscar Peterson Hall.
+You are in Oscar Peterson Hall. This is where you spend most of your time, as you eat and sleep here. Your room looks
+like a tornado just passed through here, but you don't have time to clean it up. You consider getting some food, which
+you can buy with your T Card.
+END
+You are in the Student Center.
+You are in the Student Center. Here is where the UTMSU has it's home base, so you decide to spend as little time here as
+possible. Connecting is the Blind Duck, where student's can go to eat, or on some nights waste their meal plan money on
+getting drunk. The bartender is super lazy and only checks if a student has an upper year T Card before serving them
+alcohol.
+END
+You are in Davis building.
+You are in Davis building, the only place on campus where the food is really any good. You see some people currently
+writing exams in the classrooms, considering yourself lucky that you don't have to write on those tiny desks. There is
+a Tim Horton's that always has a super long line. You want to get something to wake yourself up, but you might miss your
+exam if you try to wait in that long line.
+END
+You are in one of the townhouse communities.
+You are in one of the townhouse communities. Here is where some residence students are lucky enough to have an actual
+kitchen, but unluck enough to be living with three other people, with a room half the size as yours. Almost every Friday
+night there is a party going on around here, but you aren't the partying type, so you usually don't hang around there
+much. Some drunk kid is passed out by a bush. They strangely look a lot like you, but you hope you don't end up in the
+same position.
+END
+You are by the bus stop.
+You are by the bus stop. Here could be your ticket to freedom. You have a bus pass, so you could just leave this campus
+and never come here again. You could probably get a job flipping burgers for the rest of your life, but that wouldn't be
+so bad, would it? It would be better than all the stress you are feeling right now. You could never speak to your
+parents again. You could move to another province? You probably shouldn't, but it's so tempting. All you would need to
+do is use your bus pass here and it would all end.
 END

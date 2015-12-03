@@ -1,3 +1,7 @@
-itemA_____1_____2_____50_____This is itemA, you might actually need it.
-itemB_____3_____1_____20_____This is itemB, it isn't as important as itemA.
-itemC_____1_____3_____100_____This is itemC, its trying to be cool be being in the same location as itemA.
+T Card_____5_____9_____50_____Your "T Card" is sitting by one of the computers._____You used the T Card to buy an energy drink. You definitely need it.
+Lucky Pen_____6_____0_____0_____You see your "Lucky Pen" in the middle of the field. You have no idea how it got there._____You used the Lucky Pen.
+Cheat Sheet_____3_____0_____0_____You see your "Cheat Sheet" on one of the desks._____You used the Cheat Sheet
+Stranger's T Card_____12_____10_____0_____You see the "Stranger's T Card" lying on the ground next to the drunk._____You used the T Card in order to get some alcohol.
+Vodka_____10_____10_____-50_____You could get some "Vodka" from the bartender if you had an Upper Year T Card._____You drank the alcohol, even though you have an exam soon. You should reevaluate your life choices.
+Library Book_____9_____3_____50_____You find an overdue "Library Book" on the floor. You should probably go turn that in before the fine gets larger than the tuition fees._____You gave the library book back, and the librarian suddenly became much nicer. She handed you your cheat sheet that she found.
+Energy Drink_____9_____9_____50_____You could use the extra pick-me-up that this "Energy Drink" could give you._____You chugged the energy drink. You're starting to feel better already.

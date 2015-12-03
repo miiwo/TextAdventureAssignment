@@ -2,6 +2,5 @@ T Card_____5_____9_____50_____Your "T Card" is sitting by one of the computers._
 Lucky Pen_____6_____0_____0_____You see your "Lucky Pen" in the middle of the field. You have no idea how it got there._____You used the Lucky Pen.
 Cheat Sheet_____3_____0_____0_____You see your "Cheat Sheet" on one of the desks._____You used the Cheat Sheet
 Stranger's T Card_____12_____10_____0_____You see the "Stranger's T Card" lying on the ground next to the drunk._____You used the T Card in order to get some alcohol.
-Vodka_____10_____10_____-50_____You could get some "Vodka" from the bartender if you had an Upper Year T Card._____You drank the alcohol, even though you have an exam soon. You should reevaluate your life choices.
 Library Book_____9_____3_____50_____You find an overdue "Library Book" on the floor. You should probably go turn that in before the fine gets larger than the tuition fees._____You gave the library book back, and the librarian suddenly became much nicer. She handed you your cheat sheet that she found.
-Energy Drink_____9_____9_____50_____You could use the extra pick-me-up that this "Energy Drink" could give you._____You chugged the energy drink. You're starting to feel better already.
+Coffee_____5_____5_____10_____They are giving out free "Coffee" in preparation for exams. Limited to only one per person._____You drank the coffee, its as bitter as your gpa is.

@@ -1,9 +1,3 @@
-class SpecialItem:
-    def __init(self, name, description):
-        self.name = name
-        self.description = description
-
-
 class Location:
 
     def __init__(self, brief, long):

@@ -28,7 +28,7 @@ class Player:
         self.y += dy
         self.moves += 1
         if self.moves == self.max_moves + 1:
-            print("You could not get in on time. You lose.")
+            print("The exam started without you. You lose.")
             quit()
 
     def add_item(self, item):

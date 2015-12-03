@@ -12,7 +12,7 @@ front doors to the large lecture halls make you anxious. You really can't afford
 slacking off all year. You should start looking for your things before the test starts.
 END
 You are in the Library. Remember to be quiet.
-You are in the Library. As you walk in you see a sign remembinding people to turn in there overdue books. The librarian
+You are in the Library. As you walk in you see a sign reminding people to turn in there overdue books. The librarian
 looks at you sternly, as if to say; "You better not open your mouth, so help me god.". You consider studying here, but
 all of the study rooms here are full, as always.
 END
@@ -22,8 +22,8 @@ go find your things before your exam starts.
 END
 You are in Deerfield Hall.
 You are in Deerfield Hall. You usually are only here for around 5 minutes to hand in your labs. You see the large glass
-cases that hold way too lifelike mannequins that you always felt were a little creepy. On the second floor is are the
-study rooms that you never enter, as you prefer to study in your room. Also on the second floor is the computer labs,
+cases that hold way too lifelike mannequins that you always felt were a little creepy. On the second floor are the
+study rooms that you never enter, as you prefer to study in your room. Also on the second floor are the computer labs,
 which house some of the only computers with an ethernet connection on campus. You briefly lament over the schools shitty
 internet connection before you decide to move on.
 END
@@ -42,20 +42,18 @@ stop before you start ranting to the first person you see.
 END
 You are in the RAWC.
 You are in the RAWC. You have been here only once before when you decided to start you're workout plan to get into
-better shape. That didn't really work out, did it. You are surrounded with people with a better work ethic than you, who
+better shape. That didn't really work out, did it? You are surrounded with people with a better work ethic than you, who
 can actually go to the pool without feeling like a loser. You decide to work past your shame to try and find what you
 need for the exam.
 END
 You are in Oscar Peterson Hall.
 You are in Oscar Peterson Hall. This is where you spend most of your time, as you eat and sleep here. Your room looks
-like a tornado just passed through here, but you don't have time to clean it up. You consider getting some food, which
-you can buy with your T Card.
+like a tornado just passed through here, but you don't have time to clean it up. You consider getting some food, which you can buy with your T Card.
 END
 You are in the Student Center.
 You are in the Student Center. Here is where the UTMSU has it's home base, so you decide to spend as little time here as
 possible. Connecting is the Blind Duck, where student's can go to eat, or on some nights waste their meal plan money on
-getting drunk. The bartender is super lazy and only checks if a student has an upper year T Card before serving them
-alcohol.
+getting drunk. The bartender is super lazy and only checks if a student has an upper year T Card before serving them alcohol.
 END
 You are in Davis building.
 You are in Davis building, the only place on campus where the food is really any good. You see some people currently

@@ -1,5 +1,6 @@
 from game_data import World, Item, Location
 from player import Player
+import winsound
 
 if __name__ == "__main__":
     WORLD = World("map.txt", "locations.txt", "items.txt")
@@ -15,6 +16,7 @@ if __name__ == "__main__":
 
         # depending on whether or not it's been visited before,
         # print either full description (first time visit) or brief description (every subsequent visit)
+        # don't print it if the look command was used
         if choice != "looked at":
             if location.is_visited():
                 print("\n" + location.get_brief_description())
@@ -46,6 +48,8 @@ if __name__ == "__main__":
 
 
         choice = input("\nEnter action: ")
+        winsound.Beep(1500, 100)
+        winsound.Beep(1500, 100)
 
         # menu options
         if (choice == "[menu]"):

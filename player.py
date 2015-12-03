@@ -7,12 +7,7 @@ class Player:
         :param x: x-coordinate of position on map
         :param y: y-coordinate of position on map
         :param move: maximum amount of moves in the game
-        :return:
-
-        This is a suggested starter class for Player.
-        You may add new parameters / attributes / methods to this class as you see fit.
-        Consider every method in this Player class as a "suggested method":
-                -- Suggested Method (You may remove/modify/rename these as you like) --
+        :return: None
         '''
         self.x = x
         self.y = y
@@ -27,6 +22,7 @@ class Player:
         Given integers dx and dy, move player to new location (self.x + dx, self.y + dy)
         :param dx: amount to move left/right
         :param dy: amount to move up/down
+        :return: None
         '''
         self.x += dx
         self.y += dy
@@ -38,8 +34,8 @@ class Player:
     def add_item(self, item):
         '''
         Add item to inventory.
-        :param item:
-        :return:
+        :param item: item to be added
+        :return: None
         '''
         self.inventory.append(Item)
 
@@ -47,8 +43,8 @@ class Player:
     def remove_item(self, item):
         '''
         Remove item from inventory.
-        :param item:
-        :return:
+        :param item: item to be removed
+        :return: None
         '''
         self.inventory.remove(item)
 
@@ -64,4 +60,8 @@ class Player:
         return None
 
     def set_victory(self):
+        '''
+        Set player's victory to true
+        :return: None
+        '''
         self.victory = True

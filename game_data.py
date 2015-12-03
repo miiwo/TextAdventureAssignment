@@ -1,71 +1,77 @@
+class SpecialItem:
+    def __init(self, name, description):
+        self.name = name
+        self.description = description
+
+
 class Location:
 
     def __init__(self, brief, long):
-        '''Creates a new location.
-
-        Data that could be associated with each Location object:
-        a position in the world map,
-        a brief description,
-        a long description,
-        a list of available commands/directions to move,
-        items that are available in the location,
-        and whether or not the location has been visited before.
-        Store these as you see fit.
-
-        This is just a suggested starter class for Location.
-        You may change/add parameters and the data available for each Location class as you see fit.
-  
-        The only thing you must NOT change is the name of this class: Location.
-        All locations in your game MUST be represented as an instance of this class.
+        '''
+        Creates an instance of a Location object that has a brief description, and a long description of the location.
+        It initializes the available actions in the location, and sets its visited to False.
+        :param brief: string containing the brief description of the location
+        :param long: string containing the long description of the location
+        :return: None
         '''
         self.brief = brief
         self.long = long
         self.visit = False
         self.actions = {}
-        self.items = []
 
     def get_brief_description (self):
-        '''Return str brief description of location.'''
+        '''
+        Returns the brief description of the location
+        :return: str brief description of location.
+        '''
         return self.brief
 
     def get_full_description (self):
-        '''Return str long description of location.'''
+        '''
+        Returns long description of the location
+        :return: str long description of location.
+        '''
         return self.long
 
     def available_actions(self, name, action_val=0):
         '''
-        -- Suggested Method (You may remove/modify/rename this as you like) --
-        Return list of the available actions in this location.
-        The list of actions should depend on the items available in the location
-        and the x,y position of this location on the world map.'''
+        Adds actions that can be performed at this location.
+        :param name: str of an action that can be performed
+        :param action_val: value of that action
+        :return: None
+        '''
         self.actions[name] = action_val
 
     def is_visited(self):
         """
         Checks if a location has been visited or not
-        :return:
+        :return: True or False depending on if location has been visited or not
         """
         return self.visit
 
     def visited(self):
+        '''
+        Sets the location to be "visited"
+        :return: None
+        '''
         self.visit = True
 
 class Item:
 
     def __init__ (self, name, start, target, target_points, description):
-        '''Create item referred to by string name, with integer "start"
+        '''
+        Create item referred to by string name, with integer "start"
         being the integer identifying the item's starting location,
         the integer "target" being the item's target location, and
         integer target_points being the number of points player gets
         if item is deposited in target location.
 
-        This is just a suggested starter class for Item.
-        You may change these parameters and the data available for each Item class as you see fit.
-        Consider every method in this Item class as a "suggested method":
-                -- Suggested Method (You may remove/modify/rename these as you like) --
-
-        The only thing you must NOT change is the name of this class: Item.
-        All item objects in your game MUST be represented as an instance of this class.
+        :param name: Name of the item
+        :param start: integer of the location position it can be found in at first
+        :param target: integer of the location position that it must go to be deposited
+        :param target_points: integer that is given when the item reaches its target
+        :param description: str describing the item in a location
+        :return: None
         '''
 
         self.name = name
@@ -76,22 +82,18 @@ class Item:
 
     def get_starting_location (self):
         '''Return int location where item is first found.'''
-
         return self.start
 
     def get_name(self):
         '''Return the str name of the item.'''
-
         return self.name
 
     def get_target_location (self):
         '''Return item's int target location where it should be deposited.'''
-
         return self.target
 
     def get_target_points (self):
         '''Return int points awarded for depositing the item in its target location.'''
-
         return self.target_points
 
 class World:
@@ -99,33 +101,26 @@ class World:
     def __init__(self, mapdata, locdata, itemdata):
         '''
         Creates a new World object, with a map, and data about every location and item in this game world.
-
-        You may ADD parameters/attributes/methods to this class as you see fit.
-        BUT DO NOT RENAME OR REMOVE ANY EXISTING METHODS/ATTRIBUTES.
-
         :param mapdata: name of text file containing map data in grid format (integers represent each location, separated by space)
                         map text file MUST be in this format.
                         E.g.
                         1 -1 3
                         4 5 6
                         Where each number represents a different location, and -1 represents an invalid, inaccessible space.
-        :param locdata: name of text file containing location data (format left up to you)
-        :param itemdata: name of text file containing item data (format left up to you)
-        :return:
+        :param locdata: name of text file containing location data
+        :param itemdata: name of text file containing item data
+        :return: None
         '''
-        self.map = self.load_map(mapdata) # The map MUST be stored in a nested list as described in the docstring for load_map() below
-        # self.locations ... You may choose how to store location and item data.
-        self.locations = self.load_locations(locdata) # This data must be stored somewhere. Up to you how you choose to do it...
+        self.map = self.load_map(mapdata)
+        self.locations = self.load_locations(locdata)
         self.items = self.load_items(itemdata)
 
     def load_map(self, filename):
         '''
-        THIS FUNCTION MUST NOT BE RENAMED OR REMOVED.
         Store map from filename (map.txt) in the variable "self.map" as a nested list of integers like so:
             1 2 5
             3 -1 4
         becomes [[1,2,5], [3,-1,4]]
-        RETURN THIS NEW NESTED LIST.
         :param filename: string that gives name of text file in which map data is located
         :return: return nested list of integers representing map of game world as specified above
         '''
@@ -141,13 +136,12 @@ class World:
     def load_locations(self, filename):
         '''
         Store all locations from filename (locations.txt) into the variable "self.locations"
-        however you think is best.
         Location number is based on order they come in location.txt
         How it reads it:
         brief description
         long description - lines until it reaches END, then starts a new location
         :param filename: name of file containing location data
-        :return: list of locations for world class
+        :return: list of Location objects
         '''
 
         temp_location = []
@@ -170,11 +164,9 @@ class World:
 
     def load_items(self, filename):
         '''
-        Store all items from filename (items.txt) into ... whatever you think is best.
-        Make sure the Item class is used to represent each item.
-        Change this docstring accordingly.
-        :param filename:
-        :return:
+        Store all items from filename (items.txt) into a nested list of item information
+        :param filename: name of file containing item data
+        :return: nested list of item data
         '''
 
         temp_item = []
@@ -188,9 +180,13 @@ class World:
     def get_location(self, x, y, surround=False, player=None):
         '''Check if location exists at location (x,y) in world map.
         Return Location object associated with this location if it does. Else, return None.
-        Remember, locations represented by the number -1 on the map should return None.
+        If surround = True, it will check if the surrounding locations exist, and add them to available actions for
+        that location
+        Ex. if location to the west exists,
         :param x: integer x representing x-coordinate of world map
         :param y: integer y representing y-coordinate of world map
+        :param surround: boolean used to check the surroundings of the location.
+        :param player: player object representing the Player.
         :return: Return Location object associated with this location if it does. Else, return None.
         '''
 

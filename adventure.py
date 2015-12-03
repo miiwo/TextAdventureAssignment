@@ -3,11 +3,17 @@ from player import Player
 
 if __name__ == "__main__":
     WORLD = World("map.txt", "locations.txt", "items.txt")
-    PLAYER = Player(1, 0, 20)
+    PLAYER = Player(6, 1, 20)
 
     menu = ["look", "inventory", "score", "quit", "back"]
     choice = ""
     init_item_list = WORLD.load_items('items.txt')
+    spec_item_list = WORLD.load_special_items('special.txt')
+
+    item1 = False
+    item2 = False
+    item3 = False
+    locationc = False
 
     while not PLAYER.victory:
         # check for actions and set up location
@@ -72,7 +78,7 @@ if __name__ == "__main__":
                     for j in WORLD.items:
                         if lchoice[2] == j[0]:
                             print("{} was picked up".format(lchoice[2]))
-                            PLAYER.inventory.append(Item(i[0], i[1], i[2], i[3], i[4]))
+                            PLAYER.inventory.append(Item(i[0], i[1], i[2], i[3], i[4], i[5]))
                             WORLD.items.remove(init_item_list[init_item_list.index(i)])
                             pickup = True
                             break
@@ -83,12 +89,15 @@ if __name__ == "__main__":
             selection = PLAYER.get_item(choice[4:len(choice)])
             if selection:
                 if int(selection.target) == WORLD.locations.index(location):
-                    print("{} was used.".format(selection.get_name()))
+                    print(selection.use_descript)
                     PLAYER.remove_item(selection)
                     PLAYER.score += int(selection.target_points)
                     for items in WORLD.items:
                         if selection.name is items[0]:
                             WORLD.items.remove(items)
+                    for u in spec_item_list:
+                        if selection == u[0]:
+                            PLAYER.inventory.append(Item(u[1], u[2], u[3], u[4], u[5], u[6]))
                 else:
                     print("\nYou tried to use {}, it didn't quite work here.".format(selection.name))
             else:
@@ -101,4 +110,15 @@ if __name__ == "__main__":
         else:
             print("You tried calling out: '{}', but nothing happened.".format(choice))
 
+        for itemcheck in PLAYER.inventory:
+            if itemcheck.name == "T Card":
+                item1 = True
+            elif itemcheck.name == "Lucky Pen":
+                item2 = True
+            elif itemcheck.name == "Cheat Sheet":
+                item3 = True
+        if WORLD.locations.index(location) == 2:
+            locationc = True
 
+        if item1 == True and item2 == True and item3 == True and locationc == True:
+            PLAYER.victory = True

@@ -77,3 +77,6 @@ so bad, would it? It would be better than all the stress you are feeling right n
 parents again. You could move to another province? You probably shouldn't, but it's so tempting. All you would need to
 do is use your bus pass here and it would all end.
 END
+You are in complete darkness.
+You are in complete darkness.
+END

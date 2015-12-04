@@ -4,9 +4,9 @@ import winsound
 
 if __name__ == "__main__":
     WORLD = World("map.txt", "locations.txt", "items.txt")
-    PLAYER = Player(6, 1, 20)
+    PLAYER = Player(7, 1, 20)
 
-    menu = ["look", "inventory", "score", "quit", "back"]
+    menu = ["look", "inventory", "score", "save", "load", "quit", "back"]
     choice = ""
     init_item_list = WORLD.load_items('items.txt')
     spec_item_list = WORLD.load_special_items('special.txt')
@@ -20,11 +20,15 @@ if __name__ == "__main__":
         print(line.strip('\n'))
 
     while True:
+
         # check for actions and set up location
         location = WORLD.get_location(PLAYER.x, PLAYER.y, True, PLAYER)
         if item1 == True and item2 == True and item3 == True and WORLD.locations.index(location) == 2:
+            PLAYER.score+=100
             break
-
+        if WORLD.locations.index(location) == 14:
+            print("You have been eaten by a grue.")
+            quit()
         # depending on whether or not it's been visited before,
         # print either full description (first time visit) or brief description (every subsequent visit)
         # don't print it if the look command was used
@@ -127,6 +131,7 @@ if __name__ == "__main__":
             else:
                 print("'{}' does not exist within you.".format(choice[4:]))
 
+
         # movement
         elif choice in location.actions.keys():
             PLAYER.move(location.actions[choice][0], location.actions[choice][1])
@@ -143,4 +148,3 @@ if __name__ == "__main__":
 
 
     print("With only {} left remaining, you made it to the exam room in time with the required items.".format("a few seconds" if PLAYER.max_moves == PLAYER.moves  else "{} minutes".format(PLAYER.max_moves - PLAYER.moves)))
-#asdf

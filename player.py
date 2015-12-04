@@ -1,7 +1,7 @@
 from game_data import Item
 class Player:
 
-    def __init__(self, x, y, move):
+    def __init__(self, x, y, maxmove, move=0):
         '''
         Creates a new Player.
         :param x: x-coordinate of position on map
@@ -14,8 +14,8 @@ class Player:
         self.score = 0
         self.inventory = [Item("Bus Pass", 0, 13, 0, "Your bus pass.", "You have given up on life. You left your life at UTM with {} pts. in tow".format(self.score))]
         self.victory = False
-        self.max_moves = move
-        self.moves = 0
+        self.max_moves = maxmove
+        self.moves = move
 
     def move(self, dx, dy):
         '''

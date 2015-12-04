@@ -15,8 +15,10 @@ if __name__ == "__main__":
     item2 = False
     item3 = False
 
-    #print("You wake up realizing you have an exam in 3 hours. You rush out of bed only to realize you forgot your T Card.\nNot to mention, you can't seem to find your cheat sheet and lucky pen.")
-    print("\nYou've got an important exam coming up this evening, and you've been studying for weeks. Last night was a particularly late \nnight on campus. You had difficulty focusing, so rather than staying in one place, you studied in various places throughout the \nbuilding as the night progressed. Unfortunately, when you woke up this morning, you were missing some important exam-\nrelated items. You cannot find your T-card, and you're pretty sure that you're not going to get into tonight's exam without it.\nAlso, you seem to have misplaced your lucky exam pen -- even if they let you in, you can't possibly write with another pen!\nFinally, your instructor for the course is nicer than your CSC108 instructors in that they are allowing you one handwritten page\nof information in the exam. Last night, you painstakingly crammed as much material onto a single page as humanly possible,\nbut that's missing, too! All of this stuff must be around the building somewhere! Can you find all of it before your exam starts tonight?")
+    intro = open('intro.txt', 'r')
+    for line in intro:
+        print(line.strip('\n'))
+
     while True:
         # check for actions and set up location
         location = WORLD.get_location(PLAYER.x, PLAYER.y, True, PLAYER)
@@ -110,6 +112,8 @@ if __name__ == "__main__":
                     print(selection.use_descript)
                     PLAYER.remove_item(selection)
                     PLAYER.score += int(selection.target_points)
+                    if selection.name == "Bus Pass":
+                        quit()
                     for u in spec_item_list:
                         if selection.name == u[0]:
                             PLAYER.inventory.append(Item(u[1], u[2], u[3], u[4], u[5], u[6]))
@@ -119,7 +123,7 @@ if __name__ == "__main__":
                             WORLD.items.remove(items)
 
                 else:
-                    print("\nA voice echoes in your head. 'There is a time and place to use {}, but not here.'".format(selection.name))
+                    print("\nA voice echoes in your head. 'There is a time and place to use {}, but not now.'".format(selection.name))
             else:
                 print("'{}' does not exist within you.".format(choice[4:]))
 

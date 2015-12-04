@@ -1,6 +1,7 @@
 T Card_____5_____9_____50_____Your "T Card" is sitting by one of the computers._____You used the T Card to buy an energy drink. You definitely need it.
 Lucky Pen_____6_____0_____0_____You see your "Lucky Pen" in the middle of the field. You have no idea how it got there._____You used the Lucky Pen.
-Cheat Sheet_____3_____0_____0_____You see your "Cheat Sheet" on one of the desks._____You used the Cheat Sheet
+Cheat Sheet_____0_____0_____0_____You see your "Cheat Sheet" on one of the desks._____You used the Cheat Sheet
 Stranger's T Card_____12_____10_____0_____You see the "Stranger's T Card" lying on the ground next to the drunk._____You used the T Card in order to get some alcohol.
-Library Book_____9_____3_____50_____You find an overdue "Library Book" on the floor. You should probably go turn that in before the fine gets larger than the tuition fees._____You gave the library book back, and the librarian suddenly became much nicer. She handed you your cheat sheet that she found.
-Coffee_____5_____5_____10_____They are giving out free "Coffee" in preparation for exams. Limited to only one per person._____You drank the coffee, its as bitter as your gpa is.
+Library Book_____9_____3_____50_____You see your overdue "Library Book" on one of the tables in the lobby. You don't know why it's there, but you should probably go turn that in before the fine gets larger than the tuition fees._____You gave the library book back, and the librarian suddenly became much nicer. She handed you your cheat sheet that she found.
+Coffee_____5_____5_____10_____They are giving out free "Coffee" in preparation for exams. Limited to only one per person._____You drank the coffee, it's as bitter as your GPA is.
+Toonie_____13_____9_____10_____You see a "Toonie" sitting on the ground. How Canadian!_____You bought an energy drink with the toonie. You also used suspension of disbelief to convince yourself that an energy drink would only cost $2.

@@ -47,8 +47,10 @@ can actually go to the pool without feeling like a loser. You decide to work pas
 need for the exam.
 END
 You are in Oscar Peterson Hall.
-You are in Oscar Peterson Hall. This is where you spend most of your time, as you eat and sleep here. Your room looks
-like a tornado just passed through here, but you don't have time to clean it up. You consider getting some food, which you can buy with your T Card.
+You are in Oscar Peterson Hall. This is the building in which you live, and is your main source of food when you don't
+want to walk all the way across campus to actually get something edible. If you're here at late hours, you can sometimes
+see the drunks shambling there way through the halls trying to get back to their rooms, and despite feeling a little bad
+for them, you think it's hilarious.
 END
 You are in the Student Center.
 You are in the Student Center. Here is where the UTMSU has it's home base, so you decide to spend as little time here as

@@ -23,6 +23,8 @@ class Player:
         :param dx: amount to move left/right
         :param dy: amount to move up/down
         :return: None
+
+        Example: move(1,0) >> Player object's x is added to 1.
         '''
         self.x += dx
         self.y += dy
@@ -48,12 +50,14 @@ class Player:
         '''
         self.inventory.remove(item)
 
-    def get_inventory(self):
-        '''
-        Return inventory.
-        :return:
-        '''
     def get_item(self, name):
+        '''
+        Return inventory names.
+        :return:
+        Example:
+        Player.inventory = [Item("Cheese", 1, 2, 30, "It is a great piece of cheese"]
+        get_item returns ["Cheese"]
+        '''
         for item in self.inventory:
             if item.get_name() == name:
                 return item

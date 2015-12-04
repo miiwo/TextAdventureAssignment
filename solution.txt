@@ -1,3 +1,18 @@
-go south
+pick up Library Book
+[menu]
+inventory
 go north
+pick up Lucky Pen
+[menu]
+inventory
+go west
+pick up T Card
+[menu]
+inventory
+go east
+go east
 go north
+use Library Book
+[menu]
+score
+go west

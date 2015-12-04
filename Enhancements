@@ -1,0 +1,4 @@
+We have implemented a "use" command. The player is able to use an item at certain locations to gain points or unlock
+other items. This goes beyond the baseline requirements because it provides additional text enriching the gameplay of
+the text adventure and allowing another method of obtaining points. It also allows for items to be shown that could not
+be initially done at the start of the game, the player would have to have done something to access those items.
